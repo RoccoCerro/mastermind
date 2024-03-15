@@ -66,10 +66,12 @@ playBtn.addEventListener('click', function() {
     for (let index = 0; index < playerNumerArray.length; index++) {
         const indexChecked = checkNumberArray.indexOf(playerNumerArray[index]);
 
-        if (indexChecked !== -1) {
-            counter++;
+        if (indexChecked === index) {
+            console.log("x")
         }
-        
+        else if(indexChecked !== -1){
+            console.log("o")
+        }        
     }
     console.log(counter);
     
