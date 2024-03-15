@@ -43,7 +43,6 @@ function convertStringToNumberArray(numberString){
     const arrayOfNumbers = [];
 
     for(let i = 0; i < numberString.length; i++){
-        console.log(numberString[i]);
         const playerNumberReal = parseInt(numberString[i]);
         arrayOfNumbers.push(playerNumberReal);
     }
@@ -57,11 +56,22 @@ const playBtn = document.querySelector('#play');
 const playerNumber = document.querySelector('#number');
 
 const checkNumberArray = generateUniqueNumbers(1,10,4);
+console.log(checkNumberArray);
 
 playBtn.addEventListener('click', function() {
 
     const playerNumberValue = playerNumber.value;
     const playerNumerArray = convertStringToNumberArray(playerNumberValue);
+    let counter = 0;
+    for (let index = 0; index < playerNumerArray.length; index++) {
+        const indexChecked = checkNumberArray.indexOf(playerNumerArray[index]);
+
+        if (indexChecked !== -1) {
+            counter++;
+        }
+        
+    }
+    console.log(counter);
     
 });
 
