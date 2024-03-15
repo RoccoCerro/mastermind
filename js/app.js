@@ -54,6 +54,7 @@ function convertStringToNumberArray(numberString){
 
 const playBtn = document.querySelector('#play');
 const playerNumber = document.querySelector('#number');
+const displayDomElement = document.querySelector(".display");
 
 const checkNumberArray = generateUniqueNumbers(1,10,4);
 console.log(checkNumberArray);
@@ -67,10 +68,10 @@ playBtn.addEventListener('click', function() {
         const indexChecked = checkNumberArray.indexOf(playerNumerArray[index]);
 
         if (indexChecked === index) {
-            console.log("x")
+            displayDomElement.innerHTML += "x"
         }
         else if(indexChecked !== -1){
-            console.log("o")
+            displayDomElement.innerHTML += "o"
         }        
     }
     console.log(counter);
