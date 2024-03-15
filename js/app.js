@@ -61,6 +61,8 @@ console.log(checkNumberArray);
 
 playBtn.addEventListener('click', function() {
 
+    displayDomElement.innerHTML = "";
+    
     const playerNumberValue = playerNumber.value;
     const playerNumerArray = convertStringToNumberArray(playerNumberValue);
     let counter = 0;
@@ -69,13 +71,17 @@ playBtn.addEventListener('click', function() {
 
         if (indexChecked === index) {
             displayDomElement.innerHTML += "x"
+            counter++
         }
         else if(indexChecked !== -1){
             displayDomElement.innerHTML += "o"
-        }        
+        }      
     }
-    console.log(counter);
     
+    if (counter === 4){
+    displayDomElement.innerHTML = "HAI VINTO";
+    }
+
 });
 
 
